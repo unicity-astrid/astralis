@@ -1,0 +1,132 @@
+schema-version = 1
+
+[distro]
+id = "astralis"
+name = "Astralis"
+pretty-name = "Astralis 0.1.0 (Genesis)"
+version = "0.1.0"
+codename = "genesis"
+release-date = "2026-03-21"
+description = "The complete Astrid AI assistant experience"
+authors = ["Astrid Core Team"]
+maintainers = ["Joshua J. Bouw <josh@unicity-labs.com>"]
+homepage = "https://github.com/unicity-astrid/astralis"
+support = "https://github.com/unicity-astrid/astrid/discussions"
+bug-tracker = "https://github.com/unicity-astrid/astralis/issues"
+repository = "https://github.com/unicity-astrid/astralis"
+license = "MIT OR Apache-2.0"
+astrid-version = ">=0.5.0"
+
+[distro.requires.astrid]
+llm = "^1.0"
+session = "^1.0"
+spark = "^1.0"
+tool = "^1.0"
+
+[variables]
+openai_api_key = { secret = true, description = "API key for OpenAI-compatible LLM provider" }
+openai_base_url = { description = "API base URL", default = "https://api.openai.com" }
+openai_model = { description = "Default model ID", default = "gpt-5.4" }
+
+# ---------------------------------------------------------------------------
+# Uplinks (frontends)
+# ---------------------------------------------------------------------------
+
+[[capsule]]
+name = "astrid-capsule-cli"
+source = "@unicity-astrid/capsule-cli"
+version = "0.1.0"
+role = "uplink"
+
+[[capsule]]
+name = "astrid-capsule-registry"
+source = "@unicity-astrid/capsule-registry"
+version = "0.1.0"
+role = "uplink"
+
+# ---------------------------------------------------------------------------
+# LLM providers (multi-select — user picks which to install)
+# ---------------------------------------------------------------------------
+
+[[capsule]]
+name = "astrid-capsule-openai-compat"
+source = "@unicity-astrid/capsule-openai-compat"
+version = "0.1.0"
+group = "llm"
+
+[capsule.env]
+api_key = "{{ openai_api_key }}"
+base_url = "{{ openai_base_url }}"
+model = "{{ openai_model }}"
+
+# ---------------------------------------------------------------------------
+# Core infrastructure (always installed)
+# ---------------------------------------------------------------------------
+
+[[capsule]]
+name = "astrid-capsule-react"
+source = "@unicity-astrid/capsule-react"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-session"
+source = "@unicity-astrid/capsule-session"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-identity"
+source = "@unicity-astrid/capsule-identity"
+version = "0.2.0"
+
+[[capsule]]
+name = "astrid-capsule-router"
+source = "@unicity-astrid/capsule-router"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-prompt-builder"
+source = "@unicity-astrid/capsule-prompt-builder"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-context-engine"
+source = "@unicity-astrid/capsule-context-engine"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-hook-bridge"
+source = "@unicity-astrid/capsule-hook-bridge"
+version = "0.1.0"
+
+# ---------------------------------------------------------------------------
+# Tools
+# ---------------------------------------------------------------------------
+
+[[capsule]]
+name = "astrid-capsule-shell"
+source = "@unicity-astrid/capsule-shell"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-http"
+source = "@unicity-astrid/capsule-http"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-fs"
+source = "@unicity-astrid/capsule-fs"
+version = "0.1.0"
+
+# ---------------------------------------------------------------------------
+# Extensions
+# ---------------------------------------------------------------------------
+
+[[capsule]]
+name = "astrid-capsule-skills"
+source = "@unicity-astrid/capsule-skills"
+version = "0.1.0"
+
+[[capsule]]
+name = "astrid-capsule-memory"
+source = "@unicity-astrid/capsule-memory"
+version = "0.1.0"
