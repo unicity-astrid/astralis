@@ -1,10 +1,18 @@
 schema-version = 1
 
 [distro]
-name = "astralis"
+id = "astralis"
+name = "Astralis"
+pretty-name = "Astralis 0.1.0 (Genesis)"
 version = "0.1.0"
+codename = "genesis"
+release-date = "2026-03-21"
 description = "The complete Astrid AI assistant experience"
 authors = ["Astrid Core Team"]
+maintainers = ["Joshua J. Bouw <josh@unicity-labs.com>"]
+homepage = "https://github.com/unicity-astrid/astralis"
+support = "https://github.com/unicity-astrid/astrid/discussions"
+bug-tracker = "https://github.com/unicity-astrid/astralis/issues"
 repository = "https://github.com/unicity-astrid/astralis"
 license = "MIT OR Apache-2.0"
 astrid-version = ">=0.5.0"
