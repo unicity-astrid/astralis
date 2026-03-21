@@ -76,7 +76,7 @@ version = "0.1.0"
 [[capsule]]
 name = "astrid-capsule-identity"
 source = "@unicity-astrid/capsule-identity"
-version = "0.2.0"
+version = "0.1.0"
 
 [[capsule]]
 name = "astrid-capsule-router"
