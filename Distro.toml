@@ -53,11 +53,7 @@ name = "astrid-capsule-openai-compat"
 source = "@unicity-astrid/capsule-openai-compat"
 version = "0.1.0"
 group = "llm"
-
-[capsule.env]
-api_key = "{{ openai_api_key }}"
-base_url = "{{ openai_base_url }}"
-model = "{{ openai_model }}"
+env = { api_key = "{{ openai_api_key }}", base_url = "{{ openai_base_url }}", model = "{{ openai_model }}" }
 
 # ---------------------------------------------------------------------------
 # Core infrastructure (always installed)
@@ -77,6 +73,7 @@ version = "0.1.0"
 name = "astrid-capsule-identity"
 source = "@unicity-astrid/capsule-identity"
 version = "0.1.0"
+env = { cwd_dir = ".astrid" }
 
 [[capsule]]
 name = "astrid-capsule-router"
@@ -130,3 +127,4 @@ version = "0.1.0"
 name = "astrid-capsule-memory"
 source = "@unicity-astrid/capsule-memory"
 version = "0.1.0"
+env = { cwd_dir = ".astrid" }
