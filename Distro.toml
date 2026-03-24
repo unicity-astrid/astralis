@@ -53,7 +53,7 @@ name = "astrid-capsule-openai-compat"
 source = "@unicity-astrid/capsule-openai-compat"
 version = "0.1.0"
 group = "llm"
-env = { api_key = "{{ openai_api_key }}", base_url = "{{ openai_base_url }}", model = "{{ openai_model }}" }
+env = { api_key = "{{ openai_api_key }}", base_url = "{{ openai_base_url }}", model = "{{ openai_model }}", temperature = "", max_output_tokens = "128000" }
 
 # ---------------------------------------------------------------------------
 # Core infrastructure (always installed)
