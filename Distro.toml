@@ -15,20 +15,13 @@ support = "https://github.com/unicity-astrid/astrid/discussions"
 bug-tracker = "https://github.com/unicity-astrid/astralis/issues"
 repository = "https://github.com/unicity-astrid/astralis"
 license = "MIT OR Apache-2.0"
-astrid-version = ">=0.5.0"
+astrid-version = ">=0.6.0"  # TODO(#1016): pin to the release that includes the onboarding-select parser
 
 [distro.requires.astrid]
 llm = "^1.0"
 session = "^1.0"
 spark = "^1.0"
 tool = "^1.0"
-
-[variables]
-openai_api_key = { secret = true, description = "API key for OpenAI-compatible LLM provider" }
-openai_base_url = { description = "API base URL", default = "https://api.openai.com" }
-openai_model = { description = "Default model ID", default = "gpt-5.4" }
-openai_temperature = { description = "Default temperature (0.0-2.0, blank = provider default)" }
-openai_max_tokens = { description = "Max output tokens", default = "128000" }
 
 # ---------------------------------------------------------------------------
 # Uplinks (frontends)
@@ -55,7 +48,12 @@ name = "astrid-capsule-openai-compat"
 source = "@unicity-astrid/capsule-openai-compat"
 version = "0.1.0"
 group = "llm"
-env = { api_key = "{{ openai_api_key }}", base_url = "{{ openai_base_url }}", model = "{{ openai_model }}", temperature = "{{ openai_temperature }}", max_output_tokens = "{{ openai_max_tokens }}" }
+
+[[capsule]]
+name = "astrid-capsule-openai"
+source = "@unicity-astrid/capsule-openai"
+version = "0.1.0"
+group = "llm"
 
 # ---------------------------------------------------------------------------
 # Core infrastructure (always installed)
