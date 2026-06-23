@@ -15,7 +15,7 @@ support = "https://github.com/unicity-astrid/astrid/discussions"
 bug-tracker = "https://github.com/unicity-astrid/astralis/issues"
 repository = "https://github.com/unicity-astrid/astralis"
 license = "MIT OR Apache-2.0"
-astrid-version = ">=0.6.0"  # TODO(#1016): pin to the release that includes the onboarding-select parser
+astrid-version = ">=0.8.1"  # TODO(#1016): pin to the release that includes the onboarding-select parser
 
 [distro.requires.astrid]
 llm = "^1.0"
