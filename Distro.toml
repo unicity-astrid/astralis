@@ -3,10 +3,10 @@ schema-version = 1
 [distro]
 id = "astralis"
 name = "Astralis"
-pretty-name = "Astralis 0.1.1 (Genesis)"
-version = "0.1.1"
+pretty-name = "Astralis 0.2.0 (Genesis)"
+version = "0.2.0"
 codename = "genesis"
-release-date = "2026-03-21"
+release-date = "2026-07-02"
 description = "The complete Astrid AI assistant experience"
 authors = ["Joshua J. Bouw <dev@joshuajbouw.com>", "Unicity Labs <info@unicity-labs.com>"]
 maintainers = ["Joshua J. Bouw <jjb@unicity-labs.com>"]
@@ -15,7 +15,7 @@ support = "https://github.com/unicity-astrid/astrid/discussions"
 bug-tracker = "https://github.com/unicity-astrid/astralis/issues"
 repository = "https://github.com/unicity-astrid/astralis"
 license = "MIT OR Apache-2.0"
-astrid-version = ">=0.5.0"
+astrid-version = ">=0.9.0"  # distro floor enforcement + per-principal provisioning landed in 0.9.0
 
 [distro.requires.astrid]
 llm = "^1.0"
@@ -37,13 +37,13 @@ openai_max_tokens = { description = "Max output tokens", default = "128000" }
 [[capsule]]
 name = "astrid-capsule-cli"
 source = "@unicity-astrid/capsule-cli"
-version = "0.1.0"
+version = "0.2.0"
 role = "uplink"
 
 [[capsule]]
 name = "astrid-capsule-registry"
 source = "@unicity-astrid/capsule-registry"
-version = "0.1.0"
+version = "0.2.0"
 role = "uplink"
 
 # ---------------------------------------------------------------------------
@@ -53,7 +53,7 @@ role = "uplink"
 [[capsule]]
 name = "astrid-capsule-openai-compat"
 source = "@unicity-astrid/capsule-openai-compat"
-version = "0.1.0"
+version = "0.2.0"
 group = "llm"
 env = { api_key = "{{ openai_api_key }}", base_url = "{{ openai_base_url }}", model = "{{ openai_model }}", temperature = "{{ openai_temperature }}", max_output_tokens = "{{ openai_max_tokens }}" }
 
@@ -64,17 +64,17 @@ env = { api_key = "{{ openai_api_key }}", base_url = "{{ openai_base_url }}", mo
 [[capsule]]
 name = "astrid-capsule-react"
 source = "@unicity-astrid/capsule-react"
-version = "0.1.0"
+version = "0.2.1"
 
 [[capsule]]
 name = "astrid-capsule-session"
 source = "@unicity-astrid/capsule-session"
-version = "0.1.0"
+version = "0.2.0"
 
 [[capsule]]
 name = "astrid-capsule-identity"
 source = "@unicity-astrid/capsule-identity"
-version = "0.1.0"
+version = "0.2.0"
 
 [[capsule]]
 name = "astrid-capsule-users"
@@ -99,7 +99,7 @@ version = "0.1.0"
 [[capsule]]
 name = "astrid-capsule-hook-bridge"
 source = "@unicity-astrid/capsule-hook-bridge"
-version = "0.1.0"
+version = "0.2.0"
 
 # ---------------------------------------------------------------------------
 # Tools
@@ -108,12 +108,12 @@ version = "0.1.0"
 [[capsule]]
 name = "astrid-capsule-shell"
 source = "@unicity-astrid/capsule-shell"
-version = "0.1.0"
+version = "0.2.0"
 
 [[capsule]]
 name = "astrid-capsule-http"
 source = "@unicity-astrid/capsule-http"
-version = "0.1.0"
+version = "0.1.1"
 
 [[capsule]]
 name = "astrid-capsule-fs"
@@ -132,7 +132,7 @@ version = "0.1.0"
 [[capsule]]
 name = "astrid-capsule-skills"
 source = "@unicity-astrid/capsule-skills"
-version = "0.1.0"
+version = "0.2.0"
 
 [[capsule]]
 name = "astrid-capsule-agents"
